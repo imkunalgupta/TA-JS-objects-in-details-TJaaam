@@ -7,7 +7,7 @@ let correctAnswerIndex = 2;
 function getCorrectAnswer() {
     return options[correctAnswerIndex];
 }
-function isAnswerCorrect (index) {
+function isAnswerCorrect(index) {
     return index === correctAnswerIndex;
 }
 */
@@ -34,10 +34,10 @@ function quiz (title, options, correctAnswer) {
     quizDemo.title = title;
     quizDemo.options = options;
     quizDemo.correctAnswerIndex = correctAnswer;
-    quizDemo.getCorrectAnswer(){
+    quizDemo.getCorrectAnswer = function(){
         return quizDemo.options[quizDemo.correctAnswerIndex]
     };
-    quizDemo.isAnswerCorrect (index) {
+    quizDemo.isAnswerCorrect = function(index) {
         return index === quizDemo.correctAnswerIndex;
     };
     return quizDemo;
@@ -52,10 +52,10 @@ function quiz (title, options, correctAnswer) {
     quizDemo.title = title;
     quizDemo.options = options;
     quizDemo.correctAnswerIndex = correctAnswer;
-    quizDemo.getCorrectAnswer() {
+    quizDemo.getCorrectAnswer = function() {
         return this.options[this.correctAnswerIndex];
     }; 
-    quizDemo .isAnswerCorrect (index) {
+    quizDemo .isAnswerCorrect = function(index) {
         return index === this.correctAnswerIndex;
     };
     return quizDemo;
