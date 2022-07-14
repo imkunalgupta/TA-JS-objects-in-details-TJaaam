@@ -12,6 +12,8 @@
 
 - Create a static method named `isEqual` which accepts two square instance (when you create a new object using the class). If the area of both square is same the method should return `true` or `false`. (Static methods are called directly on the class not in the instance)
 
+- Create another property named `numberOfTimes` that will hold the value of number of times the area property is accessed from the object. The values will initialize to `0`. The area property can not be accessed more than 4 times. If it crosses 4 times alert message `Upper Limit Reached`.
+
 - Create two instance of the `Square` class (ex: `let s1 = new Square(6);`)
 
 - Check the `area` getter method on both square.
