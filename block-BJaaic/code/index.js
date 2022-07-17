@@ -1,16 +1,17 @@
 let animalMethods ={
     eat: function(){
-        console.log(`I live in ${this.location} and I can eat`)
+        console.log(`I live in ${this.location} and I can eat`);
     },
     changeLocation: function(newLocation){
-        return this.location = newLocation;
+        this.location = newLocation;
+        return this.location;
     },
     summary: function(){
-        return(`I live in ${this.location} and I have ${this.numberOfLegs}`)
+        return(`I live in ${this.location} and I have ${this.noOfLegs}`)
     },
 }
 
-function Animal (location, noOfLegs){
+function animal (location, noOfLegs){
     let animalInfo = Object.create(animalMethods);
     animalInfo.location = location;
     animalInfo.noOfLegs = noOfLegs;
@@ -23,20 +24,21 @@ let dogMethods ={
     },
     changeName: function (newName) {
         this.name = newName;
+        return this.name;
     },
     changeColor: function(newColor){
         this.color = newColor;
+        return this.color;
     },
      summary: function() {
         return(`I am ${this.name} and I am of ${this.color} color. I can also bark`)
-     },
-    
+     },  
 }
+Object.setPrototypeOf(dogMethods, animalMethods);
 
 function dog (location, noOfLegs, name, color){
-    let dogInfo = Object.create(dogMethods);
-    dogInfo.location = location;
-    dogInfo.noOfLegs = noOfLegs;
+    let dogInfo = animal(location, noOfLegs);
+    Object.setPrototypeOf(dogInfo, dogMethods);
     dogInfo.name = name;
     dogInfo.color = color;
     return dogInfo;
@@ -48,18 +50,21 @@ let catMethods ={
     },
     changeName: function (newName) {
         this.name = newName;
+        return this.name;
     },
     changeColorOfEyes: function(newColor){
         this.colorOfEyes = newColor;
+        return this.colorOfEyes;
     },
      summary: function () {
         return(`I am ${this.name} and the color of my eyes are ${this.colorOfEyes}. I can also do meow meow`)
      },  
 }
-
+Object.setPrototypeOf(catMethods, animalMethods);
 
 function cat (location, noOfLegs, name, colorOfEyes){
-    let catInfo = Object.create(dogMethods);
+    let catInfo = animal(location, noOfLegs);
+    Object.setPrototypeOf(catInfo, catMethods);
     catInfo.location = location;
     catInfo.noOfLegs = noOfLegs;
     catInfo.name = name;
