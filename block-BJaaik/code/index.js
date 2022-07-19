@@ -1,4 +1,4 @@
-class person {
+class Person {
     constructor(name, age, gender){
     this.name = name;
     this.age = age;
@@ -55,3 +55,5 @@ class Cricketer extends Player{
         console.log(`I am ${this.name} and I play cricket for ${this.teamName}`);
     }
 }
+
+let virat = new Cricketer("virat", 30, "male", "cricket", "India");
