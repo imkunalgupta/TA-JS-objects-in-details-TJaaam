@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link rel="stylesheet" href="./stylesheet/style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <header>
+                <h1>My Book List</h1>
+            </header>
+            <p>
+                You can add multiple books to your reading list, 
+                <br> you can delete them and mark as read.
+            </p>
+            <form action="" class="form">
+                <input id="title" type="text" name="bookName" placeholder="Title Of Book">
+                <input id="author" type="text" name="bookAuthor" placeholder="Author of Book">
+                <input id="img" type="text" name="bookImage" placeholder="Image URL">
+                <button id="button" type="submit">Submit</button>
+            </form>
+            <div class="book">
+                <ul class="book-list"></ul>
+            </div>
+        </div>
+        <script src="./index.js"></script>
+    </main>
+</body>
+</html>
